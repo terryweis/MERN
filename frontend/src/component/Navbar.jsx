@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Flex, HStack, Text, Button, useColorMode} from '@chakra-ui/react'
+import { Container, Flex, Spacer, HStack, Text, Button, useColorMode} from '@chakra-ui/react'
 import { PlusSquareIcon } from '@chakra-ui/icons'
 import { Link } from "react-router-dom";
 import { IoMoon } from "react-icons/io5";
@@ -11,14 +11,14 @@ const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   
   return (
-  <Container maxW={"1140px"} px={4} >
+  <Container maxW={"1140px"} px={10} >
     <Flex
-    h={16}
-    alignItems={"center"}
-    justifyContent={"space-between"}
-    flexDir={{
-      base:"column",
-      sm:"row",
+      h={16}
+      alignItems={"center"}
+      justifyContent={""}
+      flexDir={{
+        base: "column",
+        sm: "row",
       }} 
     >
 
@@ -26,12 +26,12 @@ const Navbar = () => {
  fontSize= {{ base: "22", sm: "28"}}
  fontWeight={'extrabold'}
  textTransform={"uppercase"}
- textAlign={"Center"}
+ textAlign={"center"}
  bgGradient={"linear(to-r, #7928CA, #FF0080)"}
  bgClip={"text"}
 >
 
-<Link to={"/"}>Product Store 🛒</Link>
+<Link to={"/"}>Candle Chronicles 🛒</Link>
 </Text>
 
 <HStack spacing={2} alignItems={"center"}>
@@ -40,9 +40,11 @@ const Navbar = () => {
   <PlusSquareIcon fontSize={20} />
 </Button>
 </Link>
+
 <Button onClick={toggleColorMode}>
   {colorMode === "light" ? <IoMoon />:<LuSun size="20" />}
 </Button>
+
      </HStack>
     </Flex>
   </Container>
