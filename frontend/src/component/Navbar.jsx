@@ -4,18 +4,20 @@ import { PlusSquareIcon } from '@chakra-ui/icons'
 import { Link } from "react-router-dom";
 import { IoMoon } from "react-icons/io5";
 import { LuSun } from "react-icons/lu";
+import { useProductStore } from '../store/Product';
 
 
 
 const Navbar = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
-  
+const { colorMode, toggleColorMode } = useColorMode();
+const { products } = useProductStore();
+
   return (
-  <Container maxW={"1140px"} px={10} >
+  <Container maxW={"1140px"} px={2} >
     <Flex
       h={16}
       alignItems={"center"}
-      justifyContent={""}
+      justifyContent={"space-between"}
       flexDir={{
         base: "column",
         sm: "row",

@@ -5,7 +5,12 @@ import Navbar from "./component/Navbar";
 import { Box } from "@chakra-ui/react";
 
 
-function App() {
+// const NavBar = () => {
+//   const {colorMode, toggleColorMode } = userColorMode();
+
+function App(){
+
+
   return (
   
     <Box minH="100vh">

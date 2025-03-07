@@ -1,6 +1,7 @@
-import { Box, Button, Container, Heading, Input, VStack, useColorModeValue } from '@chakra-ui/react';
-import { h1, image } from 'framer-motion/client';
 import React, { useState } from 'react'
+import { h1, image } from 'framer-motion/client';
+import { Box, Button, Container, Heading, Input, VStack, useColorModeValue } from '@chakra-ui/react';
+import { useProductStore } from '../store/Product';
 
 const CreatePage = () => {
   const [newProduct, setNewProduct] = useState ({
@@ -9,6 +10,14 @@ const CreatePage = () => {
     image: "",
 
   });
+
+  const {createProduct}=useProductStore()
+
+  const handleProduct = async () => {
+    const {success,message} = await createProduct(newProduct)
+    console.log("Success:",success)
+    console.log("Message:",message)
+  }
 
   const handleAddProduct = () => 
     console.log(newProduct);
